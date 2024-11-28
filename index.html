@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para mi Novio</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #decce6, #B5FFFC);
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 10px 0;
+      animation: fadeIn 3s ease-in-out;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 20px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #bc9cf8;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    button:hover {
+      background-color: #983eff;
+    }
+    /* Fondo de estrellas */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(transparent, rgba(255,255,255,0.1));
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      animation: sparkle 2s infinite;
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <h1>¡Nunca olvides lo increíble que eres!</h1>
+  <h2>Nunca dudes de lo que puedes lograr, para mí, ya eres el mejor ❤️</h2>
+  <p>Estoy segura de que vendrán cosas mejores y oportunidades maravillosas ❤️</p>
+  <button onclick="alert('¡Te amo mucho guapetón! 💖')">Tócame!!</button>
+
+  <script>
+    // Generar estrellas dinámicamente
+    const starsContainer = document.querySelector('.stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
